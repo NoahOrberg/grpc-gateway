@@ -292,7 +292,7 @@ You might want to keep the behavior of the current marshaler but change only a m
 
    func forwardCheckoutResp(ctx context.Context, mux *runtime.ServeMux, marshaler runtime.Marshaler, w http.ResponseWriter, req *http.Request, resp proto.Message, opts ...func(context.Context, http.ResponseWriter, proto.Message) error) {
    	if someCondition(resp) {
-   		http.Error(w, "not enough credit", http. StatusPaymentRequired)
+   		http.Error(w, "not enough credit", http.StatusPaymentRequired)
    		return
    	}
    	runtime.ForwardResponseMessage(ctx, mux, marshaler, w, req, resp, opts...)
